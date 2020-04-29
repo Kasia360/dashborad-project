@@ -4,6 +4,8 @@ $paragraph-font-size: 16px;
 /* Fonts */
 $brand-font: 'Roboto', Helvetica, Arial;
 $paragraph-font: 'Roboto', Helvetica, Arial;
+$font-text: $brand-font;
+$font-header: sans-serif;
 
 /*Font weight*/
 $font-light: 300;
@@ -14,7 +16,7 @@ $font-bold: 700;
 /*Colors*/
 $color-white: #fff;
 $color-light: #f5f5f2;
-$color-semi-ligt: #e3e3e3;
+$color-semi-light: #e3e3e3;
 $color-medium: #979797;
 $color-semi-medium: #979797;
 $color-dark: #333;

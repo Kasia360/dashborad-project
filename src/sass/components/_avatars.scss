@@ -3,26 +3,26 @@
   align-items: center;
   cursor: pointer;
 
-  .avatar__image{
+  .avatar__image {
     position: relative;
 
     &:after {
       content: '';
-     background-color: $color-three;
-     width: 12px;
-     height: 12px;
-     border-radius: 50%;
-     position: absolute;
-     right: 8px;
-     top: 2px;
-   }
+      background-color: $color-three;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      position: absolute;
+      right: 8px;
+      top: 2px;
+    }
 
-  img{
-    border-radius: 50%;
-    width: 45px;
-    height: 45px;
-    margin-right: 10px;
-  }
+    img {
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      margin-right: 10px;
+    }
   }
 
   .avatar__name {
@@ -32,6 +32,17 @@
   }
 }
 
-.avatar--mini{
-color: #fff;
+.avatar--mini {
+  display: flex;
+  justify-content: flex-start;
+
+  .avatar--mini__image {
+    margin-right: 15px;
+  }
+
+  .avatar--mini__name {
+    font-weight: $font-light;
+    color: $color-one;
+    margin-right: 15px;
+  }
 }

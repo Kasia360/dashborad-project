@@ -53,3 +53,9 @@
   }
 
 }
+@media (max-width: 600px) {
+  .links__row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

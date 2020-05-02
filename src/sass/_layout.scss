@@ -1,4 +1,6 @@
-//mobile menu
+* {
+  box-sizing: border-box;
+}
 
 .grid-container {
   display: grid;
@@ -140,6 +142,7 @@
   }
 }
 
+//hamburger
 .mobile-menu {
   position: relative;
   display: block;
@@ -221,8 +224,15 @@ section {
 }
 
 .section__wrapper {
-  width: 685px;
+  max-width: 685px;
   margin: 25px auto;
+  padding: 15px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 100%;
 }
 .footer {
   grid-area: footer;
@@ -240,7 +250,14 @@ section {
     display: none;
     height: auto;
     width: 100vw;
-    position: absolute;
+    position: fixed;
+     z-index: 999;
+     top: 40px;
+
+     .sidenav__heading {
+       margin-top: 15px;
+       margin-bottom: 15px;
+     }
   }
 
   .sidenav__menu {
@@ -248,9 +265,14 @@ section {
   }
   .navlist {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    flex-wrap: wrap;
+    padding-bottom: 15px;
+
+    li {
+      flex: 0 0 50%;
+    }
   }
+
 
   .show {
     display: block;
@@ -259,10 +281,26 @@ section {
   .header {
     .header__brand {
       width: 100vw;
+      z-index: 999;
     }
 
     .header__menu {
       display: none;
     }
   }
+}
+@media(max-width: 767px) {
+  @include grid('sm');
+}
+
+@media(min-width: 768px) {
+  @include grid('md');
+}
+
+@media(min-width: 992px) {
+  @include grid('lg');
+}
+
+@media(min-width: 1200px) {
+  @include grid('xl');
 }

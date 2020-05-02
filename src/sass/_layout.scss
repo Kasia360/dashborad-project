@@ -187,6 +187,14 @@
     line-height: 40px;
     cursor: pointer;
 
+    a {
+      color: $color-light;
+
+      .active {
+        background-color: $color-dark;
+      }
+    }
+
     &:hover {
       background-color: $color-dark-hover;
       color: $color-white;
@@ -204,6 +212,13 @@
   padding: 18px;
   display: flex;
   flex-direction: column;
+  > * {
+    display: none;
+  }
+
+  > .active {
+    display: block;
+  }
 }
 
 section {

@@ -35,13 +35,13 @@
     <aside class="sidenav">
       <div class="sidenav__navList">
         <ul class="navlist">
-          <li><span class="icon-general navlist--icon"></span>General</li>
-          <li><span class="icon-details navlist--icon"></span>Details</li>
-          <li><span class="icon-links navlist--icon"></span>Links</li>
-          <li><span class="icon-banners navlist--icon"></span>Banners</li>
-          <li><span class="icon-personaldata navlist--icon"></span>Personal Data</li>
-          <li><span class="icon-payout navlist--icon"></span>Payout</li>
-          <li><span class="icon-postback navlist--icon"></span>Postback</li>
+          <li><a href="#general"><span class="icon-general navlist--icon"></span>General</a></li>
+          <li><a href="#details"><a href="#links"><a href="#banners"><a href="#personal-data"><span class="icon-details navlist--icon"></span>Details</a></li>
+          <li><a href="#banners"><a href="#personal-data"><a href="#links"><a href="#banners"><a href="#personal-data"><span class="icon-links navlist--icon"></span>Links</a></li>
+          <li><a href="#banners"><a href="#personal-data"><span class="icon-banners navlist--icon"></span>Banners</a></li>
+          <li><a href="#personal-data"><span class="icon-personaldata navlist--icon"></span>Personal Data</a></li>
+          <li><a href="#payout"><span class="icon-payout navlist--icon"></span>Payout</a></li>
+          <li><a href="#postback"><span class="icon-postback navlist--icon"></span>Postback</a></li>
         </ul>
       </div>
       <div class="sidenav__profile">
@@ -65,7 +65,7 @@
       </div>
     </aside>
     <main class="main">
-      <section class="general">
+      <section class="general" id="general">
         <h1 class="section__title">General Statistic</h1>
         <div class="input-wrapper">
           <form class="input-date">
@@ -97,18 +97,11 @@
           </div>
           <div class="general__chart">
             <h2>Earnings chart</h2>
-            <div class="general__chart--buttons">
-              <button class="btn btn-gray btn-1">Signups</button>
-              <button class="btn btn-gray btn-2">FTD</button>
-              <button class="btn btn-gray btn-3">Earned</button>
-            </div>
-            <div class="general__chart--image">
-              <img src="images/charts/chart01.jpg">
-            </div>
+            <canvas id="myChart"></canvas>
           </div>
         </div>
       </section>
-      <section class="links">
+      <section class="links" id="links">
         <h1 class="section__title">Links</h1>
         <div class="section__wrapper">
           <div class="btn-centered">
@@ -161,7 +154,7 @@
           </div>
         </div>
       </section>
-      <section class="banners">
+      <section class="banners" id="banners">
         <h1 class="section__title">Banners</h1>
         <div class="section__wrapper">
           <div class="btn-centered">
@@ -198,7 +191,7 @@
           </div>
         </div>
       </section>
-      <section class="personal-data">
+      <section class="personal-data" id="personal-data">
         <h1 class="section__title">Personal data</h1>
         <div class="personal-data__wrapper">
           <form action="" method="post">
@@ -257,7 +250,7 @@
           </form>
         </div>
       </section>
-      <section class="details">
+      <section class="details" id="details">
         <h1 class="section__title">Detail statistic</h1>
         <div class="input-wrapper">
           <form class="input-date">
@@ -409,7 +402,7 @@
           </ul>
         </div>
       </section>
-      <section class="payout">
+      <section class="payout" id="payout">
         <h1 class="section__title">Payout history</h1>
         <div class="input-wrapper">
           <form class="input-date">
@@ -500,12 +493,18 @@
       </section>
       <div class="overlay" id="overlay">
         <form class="modal" id="loginModal">
-          <div class="btn-close js--close-modal">x</div>
+          <div class="btn btn-close js--close-modal">x</div>
 
           <h1 class="section__title">LOGIN</h1>
           <div class="login">
-            <input name="login" placeholder="login name" required>
-            <input name="password" placeholder="password" required>
+            <div class="login-wrapper">
+            <span class="icon-profile"></span>
+              <input name="login" id="login" placeholder="login name" required>
+            </div>
+            <div class="login-wrapper">
+              <span class="icon-password"></span>
+              <input name="password" id="login_password" placeholder="password" required>
+            </div>
             <button type="submit" class="btn btn-orange">Enter</button>
           </div>
 
@@ -515,6 +514,7 @@
     </main>
     <footer class="footer"></footer>
   </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
   <script src="js/script.js"></script>
 </body>
 

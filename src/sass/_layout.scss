@@ -12,9 +12,6 @@
 .header {
   grid-area: header;
   background-color: $color-white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   color: $color-medium;
   line-height: $height-header; // row-height
 
@@ -25,6 +22,7 @@
     justify-content: space-between;
     background-color: $color-dark;
     width: 100vh;
+    position: fixed;
 
     img {
       margin-left: 20px;
@@ -206,7 +204,17 @@ section {
   background-color: $color-white;
   color: $color-medium;
   box-shadow: 0 0 21px 0 rgba(15, 13, 15, 0.2);
-  width: 100%; //padding: 18px;
+  width: 100%;
+  margin-bottom: 18px;
+}
+
+.section__title {
+  text-transform: uppercase;
+  font-weight: $font-medium;
+  font-size: 16px;
+  margin: 0 auto;
+  padding: 16px;
+  border-bottom: solid 1px $color-semi-light;
 }
 
 .footer {

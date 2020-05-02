@@ -2,9 +2,11 @@
 
 .grid-container {
   display: grid;
-  grid-template-columns: 100%;
+  grid-template-columns: $width-sidenav 1fr;
   grid-template-rows: $height-header 1fr $height-footer;
-  grid-template-areas: "header" "main" "footer";
+  grid-template-areas: "header header"
+  "sidenav main"
+  "sidenav footer";
   min-height: 100vh;
   overflow-x: hidden;
 }
@@ -21,7 +23,7 @@
     align-items: center;
     justify-content: space-between;
     background-color: $color-dark;
-    width: 100vh;
+    width: $width-sidenav;
     position: fixed;
 
     img {
@@ -33,12 +35,12 @@
   .header__menu {
     justify-content: flex-end;
     flex-direction: row;
-    display: none;
+    display: flex;
 
     .wallet {
       font-weight: $font-regular;
       font-size: 20px;
-      border-left: solid 1px $color-semi-light;
+      border-left: $single-line;
 
       .icon {
         font-size: 12px;
@@ -53,14 +55,14 @@
 
     .exit,
     .notification {
-      border-left: solid 1px $color-semi-light;
+      border-left: $single-line;
       min-width: 60px;
       display: flex;
       justify-content: center;
     }
 
     .avatar {
-      border-left: solid 1px $color-semi-light;
+      border-left: $single-line;
       padding: auto 10px auto 15px;
     }
   }
@@ -72,7 +74,7 @@
   height: 100%;
   position: fixed;
   top: $height-header;
-  display: none;
+  display: block;
   flex-direction: column;
   overflow-y: hidden;
   background-color: $color-dark;
@@ -97,8 +99,9 @@
 //only on mobiles
 
 .sidenav__menu {
-  border-top: solid 1px $color-medium;
+  border-top: $single-line;
   font-weight: $font-light;
+  display: none;
 
   .wallet {
     font-weight: $font-regular;
@@ -225,29 +228,41 @@ section {
   grid-area: footer;
   background-color: $color-white;
 }
-@media (min-width: 660px) {
+@media (max-width: 660px) {
   .grid-container {
-    grid-template-columns: $width-sidenav 1fr;
+    grid-template-columns: 100%;
     grid-template-rows: $height-header 1fr $height-footer;
-    grid-template-areas: "header header" "sidenav main" "sidenav footer";
+    grid-template-areas: "header" "main" "footer";
     min-height: 100vh;
   }
 
   .sidenav {
-    display: block;
+    display: none;
+    height: auto;
+    width: 100vw;
+    position: absolute;
   }
 
   .sidenav__menu {
-    display: none;
+    display: block;
+  }
+  .navlist {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .show {
+    display: block;
   }
 
   .header {
     .header__brand {
-      width: 190px;
+      width: 100vw;
     }
 
     .header__menu {
-      display: flex;
+      display: none;
     }
   }
 }

@@ -1,5 +1,5 @@
 {
-
+//mobile menu
   function toggleMenu(visible) {
     document.querySelector('.sidenav').classList.toggle('show', visible);
   }
@@ -9,6 +9,7 @@
     console.log('clicked!');
     toggleMenu();
   });
+  //email check
   document.querySelector('form').addEventListener('submit', function (event) {
       let isFormValidate = true;
       console.log(isFormValidate);
@@ -22,4 +23,30 @@
 
       return !isFormValidate ? event.preventDefault() : true;
     });
+    //modal functions
+  function closeModal() {
+    document.getElementById('overlay').classList.remove('show');
+  }
+
+  document.querySelectorAll('#overlay .js--close-modal').forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      closeModal();
+    });
+  });
+
+  document.addEventListener('keyup', function (e) {
+    if (e.keyCode === 27) {
+      closeModal();
+    }
+  });
+
+  function openModal(modal) {
+    document.querySelectorAll('#overlay > *').forEach(function (modal) {
+      modal.classList.remove('show')
+    })
+    document.querySelector('#overlay').classList.add('show')
+    document.querySelector(modal).classList.add('show')
+  }
+
 }

@@ -52,12 +52,17 @@
   }
 
   //email check
-  document.querySelector('form').addEventListener('submit', function(event) {
+  const personalDataForm = document.querySelector('form.personal-data');
+
+  personalDataForm.addEventListener('submit', function (event) {
     let isFormValidate = true;
-    console.log(isFormValidate);
+    console.log(personalDataForm);
 
     const emailAddressInput = event.target.querySelector('input[name="email_address"]');
-    if (!(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/.test(emailAddressInput))) {
+    console.log(emailAddressInput);
+    // eslint-disable-next-line no-useless-escape
+    const pattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    if (!pattern.test(emailAddressInput)) {
       isFormValidate = false;
       console.log(isFormValidate);
       emailAddressInput.parentElement.querySelector('.error').innerHTML = 'Wrong email address';

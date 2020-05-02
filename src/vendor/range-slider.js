@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import * as dom from './utils/dom';
 import * as func from './utils/functions';
 import './range-slider.css';
@@ -218,7 +219,7 @@ export default class RangeSlider {
     };
 
     if (el.length) {
-      Array.prototype.slice.call(el).forEach(function (el) {
+      Array.prototype.slice.call(el).forEach(function(el) {
         createInstance(el);
       });
     } else {
@@ -226,7 +227,7 @@ export default class RangeSlider {
     }
   }
 
-  static _touchMoveScrollHandler (event) {
+  static _touchMoveScrollHandler(event) {
     if (RangeSlider.slidingVertically) {
       event.preventDefault();
     }
@@ -272,7 +273,7 @@ export default class RangeSlider {
     this.onSlideEventsCount = 0;
     this.needTriggerEvents = false;
     return this;
-  };
+  }
 
   destroy() {
     dom.removeAllListenersFromEl(this, this.options.root);
@@ -368,13 +369,17 @@ export default class RangeSlider {
     }
     this._updatePercentFromValue();
     if (triggerEvent !== false) {
-      dom.triggerEvent(this.element, 'change', { origin: this.identifier });
+      dom.triggerEvent(this.element, 'change', {
+        origin: this.identifier
+      });
     }
   }
 
   _addVerticalSlideScrollFix() {
     if (this.vertical && !verticalSlidingFixRegistered) {
-      document.addEventListener('touchmove', RangeSlider._touchMoveScrollHandler, { passive: false });
+      document.addEventListener('touchmove', RangeSlider._touchMoveScrollHandler, {
+        passive: false
+      });
       verticalSlidingFixRegistered = true;
     }
   }
@@ -433,7 +438,9 @@ export default class RangeSlider {
     dom.removeEventListeners(this.options.root, this.options.endEvent, this._handleEnd);
 
     // Ok we're done fire the change event
-    dom.triggerEvent(this.element, 'change', { origin: this.identifier });
+    dom.triggerEvent(this.element, 'change', {
+      origin: this.identifier
+    });
 
     if (this.isInteractsNow || this.needTriggerEvents) {
       if (this.onSlideEnd && typeof this.onSlideEnd === 'function') {
@@ -632,7 +639,9 @@ export default class RangeSlider {
     // Set the new value and fire the `input` event
     this.element.value = value;
     this.value = value;
-    dom.triggerEvent(this.element, 'input', { origin: this.identifier });
+    dom.triggerEvent(this.element, 'input', {
+      origin: this.identifier
+    });
   }
 }
 

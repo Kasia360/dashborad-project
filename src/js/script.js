@@ -43,10 +43,17 @@
 
   function openModal(modal) {
     document.querySelectorAll('#overlay > *').forEach(function (modal) {
-      modal.classList.remove('show')
-    })
-    document.querySelector('#overlay').classList.add('show')
-    document.querySelector(modal).classList.add('show')
+      modal.classList.remove('show');
+    });
+    document.querySelector('#overlay').classList.add('show');
+    document.querySelector(modal).classList.add('show');
   }
+  const avatarMini = document.querySelector('.avatar--mini');
+    const loginModal = document.querySelector('#loginModal');
+    console.log(loginModal);
 
+
+    avatarMini.addEventListener('click', function () {
+      openModal(loginModal);
+    });
 }

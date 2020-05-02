@@ -2,6 +2,10 @@
   display: flex;
   justify-content: center;
 }
+.btn-right {
+  display: flex;
+  justify-content: flex-end;
+}
 .btn {
   min-height: 40px;
   border-radius: $border-radius;

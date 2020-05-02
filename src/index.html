@@ -12,12 +12,22 @@
   <div class="grid-container">
     <header class="header">
        <div class="header__wallet"><span class="icon-wallet icon"></span>$1500.00<span class="icon-arrow-down icon"></span></div>
-       <div class="header__notification"><span class="icon-notification icon"></span></div>
-       <div class="header__avatar"></div>
+       <div class="header__notification"><span class="icon-notification"></span></div>
+       <div class="header__avatar">
+         <div class="avatar--mini">
+          <div class="avatar--mini__image"><span class="icon-profile"></span></div>
+          <div class="avatar--mini__name">Leonardo diCaprio</div>
+        </div>
+      </div>
        <div class="header__exit"><span class="icon-quit icon"></span></div>
      </header>
    <aside class="sidenav">
-     <div class="sidenav__brand">Just do it</div>
+     <div class="sidenav__brand">
+        <img src="images/logo-01.svg">
+        <a class="mobile-menu">
+          <span class="mobile-menu__icon"></span>
+        </a>
+      </div>
      <div class="sidenav__navList">
        <ul class="navlist">
          <li><span class="icon-general navlist--icon"></span>General</li>
@@ -32,7 +42,7 @@
      <div class="sidenav__profile">
        <div class="sidenav__heading">Your manager</div>
        <div class="avatar">
-         <img class="avatar__image" src="images/users/user1.jpg" alt="user photo">
+         <div class="avatar__image"><img src="images/users/user1.jpg" alt="user photo"></div>
          <p class="avatar__name">Michael W.</p>
        </div>
      </div>

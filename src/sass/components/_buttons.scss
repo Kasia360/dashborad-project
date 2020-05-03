@@ -2,10 +2,12 @@
   display: flex;
   justify-content: center;
 }
+
 .btn-right {
   display: flex;
   justify-content: flex-end;
 }
+
 .btn {
   min-height: 40px;
   border-radius: $border-radius;
@@ -25,6 +27,7 @@
     background-color: $color-two-hover;
   }
 }
+
 .btn-close {
   color: $color-dark;
 }
@@ -37,6 +40,7 @@
     background-color: $color-two-hover;
   }
 }
+
 .btn-gray{
   background-color: $color-white;
   color: $color-medium;

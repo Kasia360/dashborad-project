@@ -29,7 +29,7 @@
 
       &::-webkit-inner-spin-button {
         margin-top: 10px;
-        }
+      }
 
       &:first-child {
         border-right: $single-line;
@@ -63,6 +63,7 @@
 
       input {
         width: 175px;
+
         &:first-child {
           border-right: 0;
         }

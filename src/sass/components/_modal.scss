@@ -53,13 +53,13 @@
   display: flex;
   justify-content: center;
 
-.login-wrapper {
-  position: relative;
-  margin: auto 10px;
+  .login-wrapper {
+    position: relative;
+    margin: auto 10px;
 
-  span {
-    line-height: 45px;
-    position: absolute;
+    span {
+      line-height: 45px;
+      position: absolute;
       left: 10px;
       font-size: 16px;
       color: $color-medium;
